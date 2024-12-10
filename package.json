@@ -1,11 +1,11 @@
 {
-  "name": "organizasoft",
+  "name": "indominaerp",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -37,6 +37,7 @@
     "dotenv": "^16.4.5",
     "flowbite": "^2.4.1",
     "flowbite-vue": "^0.1.5",
+    "indominaerp": "file:",
     "izitoast": "^1.4.0",
     "lucide-vue-next": "^0.436.0",
     "marked": "^14.1.2",

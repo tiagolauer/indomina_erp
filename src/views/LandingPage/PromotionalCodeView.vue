@@ -5,7 +5,7 @@
                 Oferta especial!
             </h2>
             <p class="text-md text-center text-secondary-foreground/50 mb-8">
-                Receba um mês 100% gratuito na sua primeira assinatura da OrganizaSoft.
+                Receba um mês 100% gratuito na sua primeira assinatura da Indomina ERP.
             </p>
             <Card class="w-full border-none dark:bg-slate-800 p-6">
                 <CardHeader>
@@ -19,10 +19,12 @@
                 <CardContent class="flex flex-col items-center">
                     <Ticket class="w-16 h-16 dark:text-blue-600 text-blue-600 mb-4" />
                     <div class="bg-primary/30 rounded-lg p-4 mb-4">
-                        <span class="text-2xl font-mono font-bold dark:text-blue-600 text-blue-600">{{ promoCode }}</span>
+                        <span class="text-2xl font-mono font-bold dark:text-blue-600 text-blue-600">{{ promoCode
+                            }}</span>
                     </div>
                     <p class="text-sm text-gray-400 text-center mb-4">
-                        Adicione esse código no momento do checkout da sua assinatura, esse código pode ser usado apenas uma vez por conta.
+                        Adicione esse código no momento do checkout da sua assinatura, esse código pode ser usado apenas
+                        uma vez por conta.
                     </p>
                 </CardContent>
                 <CardFooter class="flex justify-center">

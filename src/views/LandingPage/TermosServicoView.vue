@@ -7,12 +7,12 @@ import { RouterLink } from 'vue-router';
         <h1>Termos de Serviço</h1>
         <p><strong>Última atualização:</strong> 23/09/2024</p>
 
-        <p>Bem-vindo ao OrganizaSoft. Ao acessar e usar nosso sistema SaaS ERP, você concorda com os termos e
+        <p>Bem-vindo ao Indomina ERP. Ao acessar e usar nosso sistema SaaS ERP, você concorda com os termos e
             condições a seguir. Se não concordar com estes Termos de Serviço, não utilize o serviço.</p>
 
         <h2>1. Definições</h2>
         <p>
-            <strong>Serviço:</strong> O sistema SaaS ERP fornecido por OrganizaSoft.<br>
+            <strong>Serviço:</strong> O sistema SaaS ERP fornecido por Indomina ERPt.<br>
             <strong>Usuário:</strong> Qualquer pessoa ou entidade que acessa o Serviço.<br>
             <strong>Conta:</strong> A conta criada por um Usuário para acessar o Serviço.<br>
             <strong>Plano:</strong> O plano de assinatura escolhido pelo Usuário para acessar funcionalidades
@@ -20,7 +20,7 @@ import { RouterLink } from 'vue-router';
         </p>
 
         <h2>2. Aceitação dos Termos</h2>
-        <p>Ao se cadastrar e utilizar o OrganizaSoft, você concorda em cumprir e ser legalmente vinculado por
+        <p>Ao se cadastrar e utilizar o Indomina ERP, você concorda em cumprir e ser legalmente vinculado por
             estes Termos de Serviço.</p>
 
         <h2>3. Modificação dos Termos</h2>
@@ -31,7 +31,8 @@ import { RouterLink } from 'vue-router';
         <h2>4. Assinaturas e Pagamentos</h2>
         <p>
             <strong>Planos:</strong> O Serviço oferece planos gratuitos e pagos, conforme descrito em nosso site.<br>
-            <strong>Cobrança:</strong> Se optar por um plano pago, o pagamento será processado via <a class="text-blue-600" href="https://stripe.com">Stripe</a>.<br>
+            <strong>Cobrança:</strong> Se optar por um plano pago, o pagamento será processado via <a
+                class="text-blue-600" href="https://stripe.com">Stripe</a>.<br>
             <strong>Renovação Automática:</strong> Planos pagos são renovados automaticamente, a menos que cancelados
             com antecedência.
         </p>
@@ -54,15 +55,16 @@ import { RouterLink } from 'vue-router';
         </ul>
 
         <h2>7. Privacidade e Dados do Usuário</h2>
-        <p>Nossa <RouterLink class="text-blue-600" to="/site/politica">política de privacidade</RouterLink> governa o tratamento de suas informações pessoais. Ao usar o Serviço, você
+        <p>Nossa <RouterLink class="text-blue-600" to="/site/politica">política de privacidade</RouterLink> governa o
+            tratamento de suas informações pessoais. Ao usar o Serviço, você
             consente com a coleta e uso de suas informações conforme descrito nessa política.</p>
 
         <h2>8. Propriedade Intelectual</h2>
-        <p>Todo o conteúdo do Serviço, incluindo software, design e gráficos, é de propriedade exclusiva de OrganizaSoft
-             e protegido por leis de direitos autorais e propriedade intelectual.</p>
+        <p>Todo o conteúdo do Serviço, incluindo software, design e gráficos, é de propriedade exclusiva de Indomina ERP
+            e protegido por leis de direitos autorais e propriedade intelectual.</p>
 
         <h2>9. Limitação de Responsabilidade</h2>
-        <p>Em nenhum caso OrganizaSoft será responsável por quaisquer danos indiretos, especiais ou consequentes
+        <p>Em nenhum caso Indomina ERP será responsável por quaisquer danos indiretos, especiais ou consequentes
             que possam surgir do uso ou incapacidade de uso do Serviço, mesmo que tenhamos sido avisados da
             possibilidade de tais danos.</p>
 
@@ -75,7 +77,7 @@ import { RouterLink } from 'vue-router';
             tribunais competentes desse local.</p>
 
         <h2>12. Contato</h2>
-        <p>Se tiver dúvidas sobre estes Termos de Serviço, entre em contato conosco em suporte@organizasoft.com.br.</p>
+        <p>Se tiver dúvidas sobre estes Termos de Serviço, entre em contato conosco em indominaerp@gmail.com.</p>
     </div>
 </template>
 

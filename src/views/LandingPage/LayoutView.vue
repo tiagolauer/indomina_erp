@@ -20,12 +20,13 @@ const navigate = (path: string) => {
         <header class="dark:bg-gray-900 bg-white sticky top-0 left-0 shadow-none">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex max-w-7xl mx-auto h-16 items-center justify-between">
-                    <a href="#" @click.prevent="navigate('/')" class="text-sm w-full md:w-1/3 font-medium text-foreground">
+                    <a href="#" @click.prevent="navigate('/')"
+                        class="text-sm w-full md:w-1/3 font-medium text-foreground">
                         <div class="flex items-center">
                             <Avatar class="h-8 w-8">
                                 <img src="/OS.png" alt="logo" />
                             </Avatar>
-                            <span class="ml-2 text-xl font-semibold">Organiza Soft</span>
+                            <span class="ml-2 text-xl font-semibold">Indomina ERP</span>
                         </div>
                     </a>
                     <nav class="hidden md:flex items-center justify-center space-x-4 w-1/3">
@@ -96,7 +97,7 @@ const navigate = (path: string) => {
             <RouterView />
         </main>
         <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-            <p class="text-xs text-gray-500 dark:text-gray-400">© 2024 Organiza Soft. Todos os direitos reservados.</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">© 2024 Indomina ERP. Todos os direitos reservados.</p>
             <nav class="sm:ml-auto flex gap-4 sm:gap-6">
                 <RouterLink
                     class="text-sm bg-transparent text-blue-400 hover:text-blue-600 cursor-pointer transition-all duration-300 hover:underline underline-offset-4"

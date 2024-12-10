@@ -9,7 +9,7 @@ useColorMode();
 // Dados dinâmicos para as seções de recursos e planos
 const features = [
     { icon: "💰", title: 'Controle financeiro', description: 'Tenha funcionalidades de controle financeiro prontas e 100% testadas em várias empresas, trouxemos os insights necessarios para criar algo simples e funcional.' },
-    { icon: "📦", title: 'Venda serviços, produtos e muito mais.', description: 'No Organiza Soft, você possui acesso à ferramentas que permitem criar, estocar e vender qualquer tipo de serviço ou produto que tenha em mente.' },
+    { icon: "📦", title: 'Venda serviços, produtos e muito mais.', description: 'No Indomina ERP, você possui acesso à ferramentas que permitem criar, estocar e vender qualquer tipo de serviço ou produto que tenha em mente.' },
     { icon: "📈", title: 'Insights e Dashboards', description: 'Tenha tudo que precisa para monitorar e acompanhar o desempenho de um negócio em um só lugar, as integrações que o Saas oferece vão te surpreender.' },
 ];
 
@@ -22,7 +22,7 @@ const features = [
                 <div class="space-y-2">
                     <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                         Simplifique seu negócio com nosso SaaS <br />
-                        <span class="text-blue-600 dark:text-blue-500">Organiza Soft</span>
+                        <span class="text-blue-600 dark:text-blue-500">Indomina ERP</span>
                     </h1>
                     <p class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
                         Nosso sistema oferece uma solução completa para gerenciar assinaturas de planos,
@@ -31,7 +31,8 @@ const features = [
                 </div>
                 <div class="space-x-4">
                     <RouterLink to="/cadastro">
-                        <Button size="lg" class="transition-transform duration-300 hover:scale-105">Comece Grátis 🎯</Button>
+                        <Button size="lg" class="transition-transform duration-300 hover:scale-105">Comece Agora
+                            🎯</Button>
                     </RouterLink>
                 </div>
             </div>
@@ -67,14 +68,14 @@ const features = [
                 Sobre Nós
             </h2>
             <div class="max-w-4xl mx-auto space-y-8">
-                <p>Bem-vindo ao OrganizaSoft! Nossa jornada começou com uma visão simples, mas poderosa: tornar a gestão
+                <p>Bem-vindo ao Indomina ERP! Nossa jornada começou com uma visão simples, mas poderosa: tornar a gestão
                     empresarial mais acessível e eficaz para todos.</p>
                 <p>Em um mundo onde muitos sistemas de ERP são complexos e onerosos, um freelancer apaixonado por
                     tecnologia e inovação decidiu que era hora de criar uma solução que atendesse às necessidades reais
                     das pequenas e médias empresas. Com uma abordagem centrada no usuário, nosso fundador buscou
                     desenvolver uma plataforma que não apenas simplificasse a gestão, mas que também oferecesse todas as
                     ferramentas essenciais em um único lugar.</p>
-                <p>O <strong>OrganizaSoft</strong> foi projetado para ser intuitivo, eficiente e, acima de tudo,
+                <p>O <strong>Indomina ERP</strong> foi projetado para ser intuitivo, eficiente e, acima de tudo,
                     acessível. Nós acreditamos que cada empresário deve ter acesso a um sistema que facilite o dia a
                     dia, permitindo que se concentrem no que realmente importa: fazer seus negócios prosperarem.</p>
                 <p>Com uma equipe de especialistas dedicados e uma forte compreensão das necessidades do mercado,
@@ -82,7 +83,7 @@ const features = [
                     nossos usuários para aprimorar ainda mais a experiência. O nosso objetivo é criar um ambiente onde
                     você possa gerenciar suas finanças, vendas, estoques e muito mais, tudo de forma integrada e
                     simples.</p>
-                <p>Nós do OrganizaSoft estamos aqui para ser seu parceiro de confiança, proporcionando um serviço que se
+                <p>Nós do Indomina ERP estamos aqui para ser seu parceiro de confiança, proporcionando um serviço que se
                     adapta ao seu negócio. Junte-se a nós e descubra como podemos transformar a forma como você gerencia
                     sua empresa!</p>
             </div>

@@ -1,0 +1,15 @@
+export interface IMenuStore {
+    admin: boolean,
+    assistente: boolean,
+    crm: boolean,
+    rh: boolean,
+    vendas: boolean,
+    financeiro: boolean,
+    patrimonio: boolean,
+    servicos: boolean,
+    assinantes: boolean,
+    dashboardFinanceiro: boolean,
+    dashboardCrm: boolean,
+    dashboardPatrimonio: boolean,
+    dashboardVendas: boolean,
+}

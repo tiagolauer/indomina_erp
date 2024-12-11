@@ -52,23 +52,23 @@ const plans: Plan[] = [
         title: '🔗 Grátis', ai: parametros.quota.free.ai, price: parametros.quota.free.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
         features: [
             [
-                `${parametros.quota.free.users} Usuários`,
+                `♾️ Usuários`,
                 true
             ],
             [
-                `${parametros.quota.free.services} Serviços`,
+                `♾️ Serviços`,
                 true
             ],
             [
-                `${parametros.quota.free.products} Produtos`,
+                `♾️ Produtos`,
                 true
             ],
             [
-                `${parametros.quota.free.signatures} Assinaturas`,
+                `♾️ Assinaturas`,
                 true
             ],
             [
-                `${parametros.quota.free.sales} Vendas`,
+                `♾️ Vendas`,
                 true
             ],
             [

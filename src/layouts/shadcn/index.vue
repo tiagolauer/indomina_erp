@@ -4,18 +4,18 @@
             <div class="flex border-white/10 border-b items-center bg-sidebar justify-between text-white p-2">
                 <div class="flex w-full items-center">
                     <!-- <img src="/OS.png" alt="logo" class="h-8 w-8 rounded-full">
-                    <span class="text-xl">Organiza Soft</span> -->
+                    <span class="text-xl">Indomina ERP</span> -->
                     <SelectConta />
                 </div>
                 <button type="button" class="lg:hidden" @click="toggleSidebar">
                     <PanelLeftClose />
                 </button>
             </div>
-             <SidebarIteravel />
+            <SidebarIteravel />
             <div class="mt-auto px-3 py-4 bg-sidebar">
                 <Card v-if="!loginStore.isProAccount && loginStore.isAdminUser">
                     <CardHeader class="text-center">
-                        <CardTitle>OrganizaSoft PRO ✨</CardTitle>
+                        <CardTitle>Indomina PRO ✨</CardTitle>
                         <CardDescription>
                             Acesse tudo de forma ilimitada, assine agora!
                         </CardDescription>

@@ -62,7 +62,8 @@ const sinatatureSubscription = async () => {
         <div v-else-if="isPastDue" class="mb-8 flex flex-col items-center justify-center text-center">
             <h1 class="text-3xl font-bold text-center">Sua assinatura PRO expirou!</h1>
             <p class="mt-2 text-lg max-w-md text-muted-foreground">Com isso, seu plano fica limitado aos recursos do
-                plano grátis, acesse o link abaixo e gerencie sua assinatura para voltar a utilizar todos os recursos do
+                plano Standard, acesse o link abaixo e gerencie sua assinatura para voltar a utilizar todos os recursos
+                do
                 PRO.</p>
         </div>
         <div v-else class="mb-8 flex flex-col items-center justify-center text-center">
@@ -76,9 +77,10 @@ const sinatatureSubscription = async () => {
                     <CardTitle
                         class="flex items-center justify-between text-2xl font-bold dark:text-gray-300 text-gray-500">
                         <div>
-                            <p class="text-xl font-bold">Plano Grátis</p>
+                            <p class="text-xl font-bold">Plano Standard</p>
                             <p class="text-3xl font-bold">{{ parametros.quota.free.price.toLocaleString('pt-BR', {
-                                style: 'currency', currency: 'BRL' }) }}</p>
+                                style: 'currency', currency: 'BRL'
+                            }) }}</p>
                         </div>
                         <Badge variant="default" v-if="showCardFree">Atual</Badge>
                     </CardTitle>
@@ -139,23 +141,28 @@ const sinatatureSubscription = async () => {
                 <CardContent class="space-y-2">
                     <div class="flex items-center">
                         <Check class="mr-2 h-4 w-4 text-green-500" />
-                        <span>Até {{ parametros.quota.pro.users == 0 ? '♾️' : parametros.quota.pro.users }} usuários</span>
+                        <span>Até {{ parametros.quota.pro.users == 0 ? '♾️' : parametros.quota.pro.users }}
+                            usuários</span>
                     </div>
                     <div class="flex items-center">
                         <Check class="mr-2 h-4 w-4 text-green-500" />
-                        <span>Até {{ parametros.quota.pro.services == 0 ? '♾️' : parametros.quota.pro.services }} serviços</span>
+                        <span>Até {{ parametros.quota.pro.services == 0 ? '♾️' : parametros.quota.pro.services }}
+                            serviços</span>
                     </div>
                     <div class="flex items-center">
                         <Check class="mr-2 h-4 w-4 text-green-500" />
-                        <span>Até {{ parametros.quota.pro.products == 0 ? '♾️' : parametros.quota.pro.products }} produtos</span>
+                        <span>Até {{ parametros.quota.pro.products == 0 ? '♾️' : parametros.quota.pro.products }}
+                            produtos</span>
                     </div>
                     <div class="flex items-center">
                         <Check class="mr-2 h-4 w-4 text-green-500" />
-                        <span>Até {{ parametros.quota.pro.signatures == 0 ? '♾️' : parametros.quota.pro.signatures }} assinaturas</span>
+                        <span>Até {{ parametros.quota.pro.signatures == 0 ? '♾️' : parametros.quota.pro.signatures }}
+                            assinaturas</span>
                     </div>
                     <div class="flex items-center">
                         <Check class="mr-2 h-4 w-4 text-green-500" />
-                        <span>Até {{ parametros.quota.pro.sales == 0 ? '♾️' : parametros.quota.pro.sales }} vendas</span>
+                        <span>Até {{ parametros.quota.pro.sales == 0 ? '♾️' : parametros.quota.pro.sales }}
+                            vendas</span>
                     </div>
                     <div class="flex items-center">
                         <Check class="mr-2 h-4 w-4 text-green-500" />

@@ -119,7 +119,7 @@ const navigate = (path: string) => {
                             <Input v-model="formValues.step1.nomeEmpresa" placeholder="Digite o nome da empresa" />
                             <p class="text-red-500 text-sm" v-if="errors.step1?.nomeEmpresa">{{
                                 errors.step1.nomeEmpresa[0]
-                                }}</p>
+                            }}</p>
                         </div>
                         <div>
                             <label>Email Principal</label>
@@ -169,7 +169,7 @@ const navigate = (path: string) => {
                                 </p>
                                 <p class="text-red-500 text-sm" v-if="errors.step2?.aceitarTermos">{{
                                     errors.step2.aceitarTermos[0]
-                                    }} </p>
+                                }} </p>
                             </div>
                         </div>
                     </template>

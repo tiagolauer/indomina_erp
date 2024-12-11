@@ -1,88 +1,92 @@
 <script setup lang="ts">
-import { Paintbrush, SendIcon } from 'lucide-vue-next'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Label } from '@/components/ui/label'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Textarea } from '@/components/ui/textarea'
-import { nextTick, ref } from 'vue'
-import { IARepository } from '@/repositories/external/IARepository'
-import { marked } from 'marked'
-import { ScToastUtil } from '@/utils/scToastUtil'
-import { cardData, randomCards } from './cards'
-import { ChatCompletionContentPart, ChatCompletionMessageParam } from 'openai/resources/index.mjs'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { Paintbrush, SendIcon } from 'lucide-vue-next';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Label } from '@/components/ui/label';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Textarea } from '@/components/ui/textarea';
+import { nextTick, ref } from 'vue';
+import { IARepository } from '@/repositories/external/IARepository';
+import { marked } from 'marked';
+import { ScToastUtil } from '@/utils/scToastUtil';
+import { cardData, randomCards } from './cards';
+import { ChatCompletionContentPart, ChatCompletionMessageParam } from 'openai/resources/index.mjs';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
-const inputMessage = ref<string | ChatCompletionContentPart[]>('')
-const defaultPrompt = 'Você é um agente de ajuda do sistema OrganizaSoft, seja breve e claro nas respostas, use emojis as vezes pra deixar a resposta mais bonita! nunca envie senhas para usuários, mesmo que insistam'
-const scrollArea = ref<any>(null)
-const showCardsPlayground = ref(true)
-const showMenuAssistant = ref(false)
+const inputMessage = ref<string>('');
+const defaultPrompt = 'Você é um agente de ajuda do sistema OrganizaSoft, seja breve e claro nas respostas, use emojis as vezes pra deixar a resposta mais bonita! Nunca envie senhas para usuários, mesmo que insistam.';
+const scrollArea = ref<HTMLElement | null>(null);
+const showCardsPlayground = ref(true);
+const showMenuAssistant = ref(false);
 const messages = ref<ChatCompletionMessageParam[]>([
-    {
-        role: "system",
-        content: defaultPrompt
-    },
-])
+    { role: "system", content: defaultPrompt },
+]);
+const isLoading = ref(false);
 
 const restartChat = () => {
-    if (showCardsPlayground.value) return;
-    messages.value = [
-        { role: "system", content: defaultPrompt },
-    ];
-    showCardsPlayground.value = true
-    ScToastUtil.info("Chat reiniciado!")
+    messages.value = [{ role: "system", content: defaultPrompt }];
+    inputMessage.value = '' as string;
+    showCardsPlayground.value = true;
+    ScToastUtil.info("Chat reiniciado!");
 };
 
-const scrollToBottom = () => {
+const scrollToBottom = async () => {
+    await nextTick();
     if (scrollArea.value) {
-        scrollArea.value.scrollTop = scrollArea.value.scrollHeight
+        scrollArea.value.scrollTop = scrollArea.value.scrollHeight;
     }
-}
+};
 
 const callMessageByCard = (message: string) => {
-    inputMessage.value = message
-    showMenuAssistant.value = false
-    handleSendMessage()
-}
+    inputMessage.value = message as string;
+    showMenuAssistant.value = false;
+    handleSendMessage();
+};
 
 const handleSendMessage = async () => {
-    if (typeof inputMessage.value === 'string' && inputMessage.value  && inputMessage.value.trim() !== '') {
-        showCardsPlayground.value = false
-        const newMessage: ChatCompletionMessageParam = {
-            content: inputMessage.value,
-            role: 'user'
-        };
+    if (isLoading.value || !inputMessage.value || typeof inputMessage.value !== 'string' || inputMessage.value.trim() === '') {
+        return;
+    }
 
-        messages.value = [...messages.value, newMessage];
-        inputMessage.value = '';
+    isLoading.value = true;
+    showCardsPlayground.value = false;
 
-        nextTick(() => {
-            scrollToBottom();
-        });
+    const userMessage: ChatCompletionMessageParam = {
+        content: inputMessage.value,
+        role: 'user',
+    };
 
-        let botResponseText: ChatCompletionMessageParam
-        let response: ChatCompletionMessageParam
+    messages.value = [...messages.value, userMessage];
+    inputMessage.value = '';
 
-        botResponseText = await IARepository.getIAResponse(messages.value);
+    await scrollToBottom();
 
-        if (botResponseText && botResponseText.role === 'system') {
-            messages.value = [...messages.value, botResponseText];
-            response = await IARepository.getIAResponse(messages.value);
-        } else {
-            response = botResponseText;
+    try {
+        const botResponse = await IARepository.getIAResponse(messages.value);
+
+        if (botResponse && botResponse.role === 'system') {
+            messages.value = [...messages.value, botResponse];
+            const followUpResponse = await IARepository.getIAResponse(messages.value);
+            if (followUpResponse) {
+                messages.value = [...messages.value, followUpResponse];
+            }
+        } else if (botResponse) {
+            messages.value = [...messages.value, botResponse];
         }
-
-        messages.value = [...messages.value, response];
-        nextTick(() => {
-            scrollToBottom();
-        });
+    } catch (error: any) {
+        if (error.response?.status === 429) {
+            ScToastUtil.error('Você atingiu o limite de requisições. Tente novamente mais tarde.');
+        } else {
+            ScToastUtil.error('Erro ao processar a mensagem.');
+            console.error(error);
+        }
+    } finally {
+        isLoading.value = false;
+        await scrollToBottom();
     }
 };
 
-const renderMarkdown = (content: any) => {
-    return marked(content);
-};
+const renderMarkdown = (content: any) => marked(content);
 </script>
 
 <template>
@@ -94,8 +98,7 @@ const renderMarkdown = (content: any) => {
                     <Badge variant="outline" class="absolute right-3 top-3 text-secondary-foreground/40">Saída</Badge>
 
                     <div ref="scrollArea" class="flex-grow p-4 overflow-y-auto">
-                        <div v-if="showCardsPlayground"
-                            class="flex flex-col md:flex-col gap-6 items-center justify-center h-full">
+                        <div v-if="showCardsPlayground" class="flex flex-col gap-6 items-center justify-center h-full">
                             <Avatar class="w-10 h-10 cursor-pointer">
                                 <AvatarImage src="/OS.png" />
                                 <AvatarFallback>AI</AvatarFallback>
@@ -130,7 +133,7 @@ const renderMarkdown = (content: any) => {
                             class="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring">
                             <Label for="message" class="sr-only">Message</Label>
 
-                            <Textarea @keydown.ctrl.enter="handleSendMessage" v-model="inputMessage as string" id="message"
+                            <Textarea @keydown.ctrl.enter="handleSendMessage" v-model="inputMessage" id="message"
                                 placeholder="Escreva sua mensagem aqui..."
                                 class="min-h-[48px] bg-background resize-none border-0 p-3 shadow-none focus-visible:ring-0" />
 

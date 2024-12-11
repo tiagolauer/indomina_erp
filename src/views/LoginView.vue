@@ -9,8 +9,8 @@
       <div class="max-w-lg text-center">
         <h1
           class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Organiza
-          <span class="text-blue-600 dark:text-blue-500">SOFT</span>
+          Indomina
+          <span class="text-blue-600 dark:text-blue-500">ERP</span>
         </h1>
         <p class="text-lg font-normal mb-10 text-gray-500 lg:text-xl dark:text-gray-400">
           Gestão financeira, serviços, assinaturas e muito mais.
@@ -65,9 +65,11 @@
         </div>
       </form>
       <div class="flex w-full max-w-lg justify-between">
-        <p class="text-sm"><RouterLink to="/cadastro" class="text-blue-500 hover:underline">Criar nova conta</RouterLink>
+        <p class="text-sm">
+          <RouterLink to="/cadastro" class="text-blue-500 hover:underline">Criar nova conta</RouterLink>
         </p>
-        <p class="text-sm"><RouterLink to="/recuperacao" class="text-blue-500 hover:underline">Esqueceu sua senha?</RouterLink>
+        <p class="text-sm">
+          <RouterLink to="/recuperacao" class="text-blue-500 hover:underline">Esqueceu sua senha?</RouterLink>
         </p>
       </div>
     </div>

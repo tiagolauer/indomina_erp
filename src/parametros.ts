@@ -28,7 +28,7 @@ export const systemParamsAccount: IPamans = {
       suport: "Suporte pelo site",
     },
     pro: {
-      price: 39.9,
+      price: 99.9,
       users: 0,
       signatures: 0,
       products: 0,

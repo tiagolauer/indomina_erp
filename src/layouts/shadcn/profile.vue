@@ -4,12 +4,13 @@
             <TooltipProvider>
                 <Tooltip :delay-duration="200" :disable-closing-trigger="true">
                     <TooltipTrigger as-child>
-                        <avatar class="h-10 w-10 border-4" :class="layoutStore.isOnline ? 'border-success' : 'border-error'">
+                        <avatar class="h-10 w-10 border-4"
+                            :class="layoutStore.isOnline ? 'border-success' : 'border-error'">
                             <AvatarImage src="/OS.png" />
                             <AvatarFallback>{{ infos?.nome.slice(0, 1).toUpperCase() }}</AvatarFallback>
                         </avatar>
                     </TooltipTrigger>
-                    <TooltipContent :class="layoutStore.isOnline ? 'bg-success' : 'bg-error'" >
+                    <TooltipContent :class="layoutStore.isOnline ? 'bg-success' : 'bg-error'">
                         <p>{{ layoutStore.isOnline ? 'Online' : 'Offline' }}</p>
                     </TooltipContent>
                 </Tooltip>

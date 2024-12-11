@@ -19,9 +19,9 @@ export interface IProfileStore {
 
 export const useProfileStore = defineStore("profileStore", () : IProfileStore => {
     const userInfos = ref<IUserProfile>({
-        nome: "Admin Gestão Inteligente",
-        email: "admin@gestao.net",
-        bio: "Sistema de gestão ERP Organiza-soft"
+        nome: "",
+        email: "",
+        bio: ""
     });
 
     const privacy_permitir_resetar_senha = ref(true);

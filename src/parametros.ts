@@ -18,17 +18,17 @@ type IPamans = {
 export const systemParamsAccount: IPamans = {
   quota: {
     free: {
-      price: 0,
-      users: 1,
-      signatures: 10,
-      products: 5,
-      services: 5,
-      sales: 20,
+      price: 99.9,
+      users: 0,
+      signatures: 0,
+      products: 0,
+      services: 0,
+      sales: 0,
       ai: false,
       suport: "Suporte pelo site",
     },
     pro: {
-      price: 99.9,
+      price: 149.9,
       users: 0,
       signatures: 0,
       products: 0,
